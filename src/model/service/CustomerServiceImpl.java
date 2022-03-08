@@ -4,23 +4,26 @@ import java.sql.SQLException;
 
 import exception.NotFoundException;
 import model.dao.CustomerDAO;
+import model.dao.CustomerDAOImpl;
 import model.dto.Customer;
 import session.Session;
 import session.SessionSet;
 
 public class CustomerServiceImpl implements CustomerService {
+	CustomerDAO customerDao = new CustomerDAOImpl();
+
 	
 	/**
-	 * ë¡œê·¸ì¸í•˜ê¸°
+	 * ·Î±×ÀÎÇÏ±â
 	 * */
 	@Override
 	public Customer login(String cus_id, String cus_pwd) throws SQLException {
-		Customer customer = CustomerDAO.login(cus_id,cus_pwd);
-		if(customer==null) {
-			throw new NotFoundException("ì •ë³´ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
+			Customer customer = CustomerDAO.login(cus_id,cus_pwd);
+			if(customer==null) {
+			throw new NotFoundException("Á¤º¸¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
 		}
 		
-		//ë¡œê·¸ì¸ ëœ ì •ë³´ ì €ì¥í•˜ê¸°
+		//·Î±×ÀÎ µÈ Á¤º¸ ÀúÀåÇÏ±â
 		Session session = new Session(cus_id);
 		
 		SessionSet sessionSet = SessionSet.getInstance();

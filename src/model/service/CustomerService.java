@@ -10,5 +10,5 @@ public interface CustomerService {
 	/**
 	 * ·Î±×ÀÎ
 	 * */
-	public Customer login(String cus_id, String cus_pwd) throws SQLException, NotFoundException;
+	public Customer login(String cus_id, String cus_pwd) throws SQLException;
 }

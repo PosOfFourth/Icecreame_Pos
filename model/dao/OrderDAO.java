@@ -9,22 +9,22 @@ import model.dto.Orders;
 
 public interface OrderDAO {
 	/**
-	 * ì£¼ë¬¸í•˜ê¸°
+	 * ì£¼ë¬¸?•˜ê¸?
 	 * */
 	int orderInsert(Orders order) throws SQLException;
 	
 	/**
-	 * ì£¼ë¬¸ìƒì„¸ ë“±ë¡í•˜ê¸°
+	 * ì£¼ë¬¸?ƒ?„¸ ?“±ë¡í•˜ê¸?
 	 * */
 	int[] orderLineInsert(Connection con, Orders order) throws SQLException;
 	
 	/**
-	 * ì¬ê³ ëŸ‰ ê°ì†Œì‹œí‚¤ê¸°
+	 * ?¬ê³ ëŸ‰ ê°ì†Œ?‹œ?‚¤ê¸?
 	 * */
 	int[] decrementStock(Connection con, List<OrderLine> orderLineList) throws SQLException;
 	
 	/**
-	 * ê²°ì œí•˜ê¸°(ì£¼ë¬¸ë‚´ì—­ë³´ê¸°)
+	 * ê²°ì œ?•˜ê¸?(ì£¼ë¬¸?‚´?—­ë³´ê¸°)
 	 * */
 	List<Orders> orderTotal(String cusPhone) throws SQLException;
 }

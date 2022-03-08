@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import model.dto.Goods;
@@ -43,38 +44,51 @@ public class GoodsDAOImpl implements GoodsDAO {
 
 		return list;
 	}
-	
+
+	//select * from goods ????
 	@Override
-	public ??? goodsSelectByTop(String top) throws SQLException {
+	public Map<Integer, String> goodsSelectByTop(String top) throws SQLException {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		?? = new ArrayList<Goods>();
+		List<Goods> list = new ArrayList<Goods>();
 		String sql = proFile.getProperty("goods.selectByTop"); 
-		
+
 		try {
-			
+
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
 			rs = ps.executeQuery();
-			
-	
-		
-		}
-			
+
 		} finally {
-			// TODO: handle finally clause
+			DbUtil.close(con, ps, rs);
+		}
+		return (Map<Integer, String>) list;
+	}
+
+	//select dealer_type from dealer
+	@Override
+	public List<Goods> goodsSelectByType(String type) throws SQLException {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		new ArrayList<Goods>();
+		String sql = proFile.getProperty("goods.SelectByType"); 
+
+		try {
+
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			rs = ps.executeQuery();
+
+		} finally {
+			DbUtil.close(null, null, null);
 		}
 		return null;
 	}
 
-	@Override
-	public List<Goods> goodsSelectByType(String type) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 
 	//insert into goods (goods_id , goods_name, stock_qty, goods_price) values (board_seq.nextval,?,?,?,?)
 	public int goodsInsert (Goods goods) throws SQLException{
@@ -96,7 +110,7 @@ public class GoodsDAOImpl implements GoodsDAO {
 
 
 		} finally {
-			DbUtil.close(con, ps);
+			DbUtil.close(con, ps, null);
 		}
 		return result;
 
@@ -119,8 +133,10 @@ public class GoodsDAOImpl implements GoodsDAO {
 			result = ps.executeUpdate();
 
 		} finally {
-			DbUtil.close(con, ps);
+			DbUtil.close(con, ps, null);
 		}
+		return result;
+
 
 		//delete from goods where goods_id = ?
 		public int goodsDelete(String goodsId) throws SQLException{
@@ -140,10 +156,10 @@ public class GoodsDAOImpl implements GoodsDAO {
 				result = ps.executeUpdate();
 
 			} finally {
-				DbUtil.close(con, ps);
+				DbUtil.close(con, ps, null);
 			}
 
 			return result;
 		}
 
-}
+	}

@@ -7,33 +7,33 @@ import model.dto.Goods;
 
 public interface GoodsDAO {
 	/**
-	 * ì „ì²´ ìƒí’ˆ (ì¬ê³  í˜„í™©)
+	 * ÀüÃ¼ »óÇ° (Àç°í ÇöÈ²)
 	 * */
 	List<Goods> goodsSelectAll() throws SQLException;
 
 	/**
-	 *  ì¸ê¸° ìƒí’ˆ -> ë§¤ì¶œìˆœìœ„ top5
+	 *  ÀÎ±â »óÇ° -> ¸ÅÃâ¼øÀ§ top5
 	 * */
-	List<Goods> goodsSelectByTop(String topName) throws SQLException;
+	List<Goods> goodsSelectByTop(String top) throws SQLException;
 
 	/**
-	 * ì¢…ë¥˜ë³„ ìƒí’ˆ
+	 * Á¾·ùº° »óÇ°
 	 * */
 	List<Goods> goodsSelectByType(String type) throws SQLException;
 
 
 	/**
-	 * ìƒí’ˆ ë“±ë¡
+	 * »óÇ° µî·Ï
 	 * */
 	int goodsInsert(Goods goods) throws SQLException;
 
 	/**
-	 * ìƒí’ˆ ìˆ˜ì •
+	 * »óÇ° ¼öÁ¤
 	 * */
 	int goodsUpdate(int stockQty) throws SQLException;
 
 	/**
-	 * ìƒí’ˆ ì‚­ì œ
+	 * »óÇ° »èÁ¦
 	 * */
 	int goodsDelete(String goodsId) throws SQLException;
 

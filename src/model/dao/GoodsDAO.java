@@ -2,6 +2,7 @@ package model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import model.dto.Goods;
 
@@ -14,7 +15,7 @@ public interface GoodsDAO {
 	/**
 	 *  인기 상품 -> 매출순위 top5
 	 * */
-	List<Goods> goodsSelectByTop(String top) throws SQLException;
+	Map<Integer, String> goodsSelectByTop(String top) throws SQLException;
 
 	/**
 	 * 종류별 상품

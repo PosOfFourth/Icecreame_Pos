@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import kosta.exam.model.dto.Board;
 import model.dto.Goods;
 import model.service.GoodsService;
 import model.service.GoodsServiceImpl;
@@ -21,7 +20,7 @@ public class GoodsController {
 		try {
 			List<Goods> list = goodsService.goodsSelectAll();
 			EndView.printGoodsList(list);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			//e.printStackTrace();
 			FailView.errorMessage(e.getMessage());
 		}

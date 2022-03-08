@@ -3,6 +3,7 @@ package view;
 import java.util.Scanner;
 
 import controller.CustomerController;
+import controller.IBController;
 import session.Session;
 import session.SessionSet;
 
@@ -80,6 +81,6 @@ public class MenuView {
 	 * 관리자기능 - 1.매출조회 2.거래처관리 3.상품관리 4.뒤로가기
 	 * */
 	public static void printAdminMenu() {
-		
+		IBController.dealerSelect();
 	}
 }

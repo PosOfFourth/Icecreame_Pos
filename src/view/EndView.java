@@ -26,7 +26,14 @@ public class EndView {
 	 * 전체 거래처 출력
 	 * */
 	public static void printDealerList(List<Dealer> dealerList) {
-		
+		System.out.println("***************************************");
+		System.out.println("                                거래처 조회                              ");
+		System.out.println("***************************************");
+		System.out.println("거래처 코드  | 취급 종류 | 거래처 이름 | 주소 | 전화번호");
+		for(Dealer dealer : dealerList) {
+			System.out.println(dealer);
+		}
+		System.out.println();
 	}
 	
 	/**

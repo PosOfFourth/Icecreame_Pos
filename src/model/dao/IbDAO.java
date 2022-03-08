@@ -8,25 +8,36 @@ import model.dto.Dealer;
 import model.dto.Ib;
 import model.dto.OrderLine;
 import model.dto.Orders;
+import model.dto.Sku;
 
 public interface IbDAO {
 	/**
-	 * ê±°ë˜ì²˜ ì¡°íšŒ
+	 * ÀüÃ¼ °Å·¡Ã³ Á¶È¸
 	 * */
 	List<Dealer> dealerSelect() throws SQLException;
 	
 	/**
-	 * ë°œì£¼
+	 *°Å·¡Ã³ ÄÚµå·Î sku »óÇ° °Ë»öÇÏ±â 
+	 * */
+	List<Sku> skuSelectByDealerId() throws SQLException;
+	
+	/**
+	 * ¹ßÁÖ
 	 * */
 	int ibInsert(Ib ib) throws SQLException;
 	
 	/**
-	 * ë°œì£¼ ìƒì„¸ ë“±ë¡í•˜ê¸°
+	 * ¹ßÁÖÄÚµå·Î °Ë»öÇÏ±â
 	 * */
-	int[] ibLineInsert(Connection con, Orders order) throws SQLException;
+	Sku SelectByIbId(String ibId) throws SQLException;
 	
 	/**
-	 * ë°œì£¼ ê²°ì œ (ë°œì£¼ë‚´ì—­ë³´ê¸°)
+	 * ¹ßÁÖ »ó¼¼ µî·ÏÇÏ±â
+	 * */
+	int[] ibLineInsert(Connection con, Ib ib) throws SQLException;
+	
+	/**
+	 * ¹ßÁÖ °áÁ¦ (¹ßÁÖ³»¿ªº¸±â)
 	 * */
 	List<Ib> ibTotal() throws SQLException;
 	

@@ -11,12 +11,12 @@ import java.util.Properties;
 public class DbUtil {
 	private static Properties proFile = new Properties();
 	/**
-	 * ë¡œë“œ
+	 * ·Îµå
 	 * */
 	
 	static {
 		try {
-			//ì™¸ë¶€ propertiesíŒŒì¼ ë¡œë”©í•˜ê¸°
+			//¿ÜºÎ propertiesÆÄÀÏ ·ÎµùÇÏ±â
 		
 			proFile.load(new FileInputStream("resources/dbInfo.properties"));
 			proFile.load(new FileInputStream("resources/fourth.properties"));
@@ -28,7 +28,7 @@ public class DbUtil {
 		}
 	}
 	/**
-	 * í™•ì¸
+	 * È®ÀÎ
 	 * */
 	public static void main(String[] args) {
 		try {
@@ -46,7 +46,7 @@ public class DbUtil {
 	}
 	
 	/**
-	 * ì—°ê²°
+	 * ¿¬°á
 	 * */
 	public static Connection getConnection() throws SQLException{
 		return DriverManager.getConnection(
@@ -56,7 +56,7 @@ public class DbUtil {
 	}
 	
 	/**
-	 * ë‹«ê¸°
+	 * ´İ±â
 	 * */
 	public static void close(Connection con , Statement st, ResultSet rs) {
 		try {

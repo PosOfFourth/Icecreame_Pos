@@ -6,6 +6,15 @@ public class Dealer {
 	private String dealerName;
 	private String dealerAddr;
 	private String dealerPhone;
+	
+	public Dealer(String dealerId, String dealerType, String dealerName, String dealerAddr, String dealerPhone) {
+		this.dealerId = dealerId;
+		this.dealerType = dealerType;
+		this.dealerName = dealerName;
+		this.dealerAddr = dealerAddr;
+		this.dealerPhone = dealerPhone;
+	}
+	
 	public String getDealerId() {
 		return dealerId;
 	}
@@ -37,6 +46,22 @@ public class Dealer {
 		this.dealerPhone = dealerPhone;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(" ");
+		builder.append(dealerId);
+		builder.append("\t | \t");
+		builder.append(dealerType);
+		builder.append("\t | \t");
+		builder.append(dealerName);
+		builder.append("\t | \t");
+		builder.append(dealerAddr);
+		builder.append("\t | \t");
+		builder.append(dealerPhone);
+		builder.append(" ");
+		return builder.toString();
+	}
 	
 	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Ib {
 	private String ibId;
-	private String dearId;
+	private String dealerId;
 	private String ibDate;
 	
 	private List<IbLine> ibLineList = new ArrayList<IbLine>();
@@ -16,11 +16,11 @@ public class Ib {
 	public void setIbId(String ibId) {
 		this.ibId = ibId;
 	}
-	public String getDearId() {
-		return dearId;
+	public String getDealerId() {
+		return dealerId;
 	}
 	public void setDearId(String dearId) {
-		this.dearId = dearId;
+		this.dealerId = dearId;
 	}
 	public String getIbDate() {
 		return ibDate;

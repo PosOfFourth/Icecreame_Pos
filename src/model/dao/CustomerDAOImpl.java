@@ -12,10 +12,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public Customer login(String cus_id, String cus_pwd) throws SQLException {
-		 Connection con=null;
-		  PreparedStatement ps=null;
-		  ResultSet rs=null;
-		  Customer customer = null; //리턴타입 customer
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		Customer customer = null; //리턴타입 customer
 		  
 	  try {
 		  con= DbUtil.getConnection();

@@ -1,6 +1,7 @@
 package view;
 
 import java.util.List;
+import java.util.Map;
 
 import model.dto.Dealer;
 import model.dto.Goods;
@@ -47,10 +48,19 @@ public class EndView {
 	 * 전체 매출 출력
 	 * */
 	
+	
+	/**
+	 * 많이 팔린 상위 5개 출력 
+	 * */
+	public static void printMessage(Map<Integer, String> map) {
+		System.out.println(map);
+	}
+	
+	
 	/**
 	 * 메세지 출력
 	 * */
 	public static void printMessage(String message) {
-		
+		System.out.println(message);
 	}
 }

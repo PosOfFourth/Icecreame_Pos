@@ -6,7 +6,7 @@ import java.util.Map;
 public class Session {
 	
 	private String sessionId;
-	private Map<String,Object> attributes; //ì¥ë°”êµ¬ë‹ˆ
+	private Map<String,Object> attributes; //Àå¹Ù±¸´Ï
 	
 	public Session() {}
 	public Session(String sessionId) {
@@ -17,17 +17,17 @@ public class Session {
 		return sessionId;
 	}
 	
-	//ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€
+	//Àå¹Ù±¸´Ï¿¡ Ãß°¡
 	public void setAttribute(String name, Object value) {//cart , Map<Goods, Integer>
 		attributes.put(name,value);
 	}
 	
-	//ì¡°íšŒ(Mapì— keyì— í•´ë‹¹í•˜ëŠ” value ì°¾ê¸°)
+	//Á¶È¸(Map¿¡ key¿¡ ÇØ´çÇÏ´Â value Ã£±â)
 	public Object getAttribute(String name) {//cart
 		return attributes.get(name);
 	}
 	
-	//ì œê±°(ì¥ë°”êµ¬ë‹ˆë¥¼ ë¹„ìš¸ë•Œ ì‚¬ìš©í•œë‹¤)
+	//Á¦°Å(Àå¹Ù±¸´Ï¸¦ ºñ¿ï¶§ »ç¿ëÇÑ´Ù)
 	public void removeAttribute(String name) {//cart
 		attributes.remove(name);
 	}
@@ -48,22 +48,23 @@ public class Session {
 	
 	@Override
 	public String toString() {
-		return "*" + sessionId +"*" + " ë‹˜ì˜ ì¥ë°”êµ¬ë‹ˆ " + "[" + attributes + "]"+"\n";
+		return  "*" + sessionId +"*" + " ´ÔÀÇ Àå¹Ù±¸´Ï " + "[" + attributes + "]"+"\n";
 	}
 	
 	
 	@Override
 	public int hashCode() {
-		return sessionId.hashCode(); //hashì½”ë“œ: ë°°ì—´ì˜ index
+		return sessionId.hashCode(); //hashÄÚµå: ¹è¿­ÀÇ index
 	}
 	
 	/**
-	 * ê°™ì€ ê°ì²´ë¼ëŠ” ëœ»ì€ hashCodeê°€ ê°™ì•„ì•¼í•˜ê³ ,
-	 * equalsì˜ ê²°ê³¼ê°€ trueì—¬ì•¼í•œë‹¤.
+	 * °°Àº °´Ã¼¶ó´Â ¶æÀº hashCode°¡ °°¾Æ¾ßÇÏ°í,
+	 * equalsÀÇ °á°ú°¡ true¿©¾ßÇÑ´Ù.
 	 * 
-	 *  hashì½”ë“œê°€ ë‹¤ë¥´ë©´ ë¬´ì¡°ê±´ ë‹¤ë¥¸ ê°ì²´
-	 *  hashì½”ë“œê°€ ê°™ìœ¼ë©´ ê°™ì€ ê°ì²´ì¼ìˆ˜ë„, ë‹¤ë¥¸ ê°ì²´ì¼ìˆ˜ë„ ìˆë‹¤.
+	 *  hashÄÚµå°¡ ´Ù¸£¸é ¹«Á¶°Ç ´Ù¸¥ °´Ã¼
+	 *  hashÄÚµå°¡ °°À¸¸é °°Àº °´Ã¼ÀÏ¼öµµ, ´Ù¸¥ °´Ã¼ÀÏ¼öµµ ÀÖ´Ù.
 	 * */
+	
 	@Override
 	public boolean equals(Object obj) {
 		Session other = (Session) obj;
@@ -76,9 +77,9 @@ public class Session {
 	}
 	
 	/*
-	//í…ŒìŠ¤íŠ¸ìš© ë©”ì¸ ë©”ì†Œë“œ
+	//Å×½ºÆ®¿ë ¸ŞÀÎ ¸Ş¼Òµå
 	public static void main(String[] args) {
-		System.out.println("---í…ŒìŠ¤íŠ¸ì¤‘ì…ë‹ˆë‹¤....---");
+		System.out.println("---Å×½ºÆ®ÁßÀÔ´Ï´Ù....---");
 		System.out.println(new Session().toString());
 		
 	}*/

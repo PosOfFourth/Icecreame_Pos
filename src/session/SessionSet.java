@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class SessionSet {//ì‹±ê¸€í†¤
+public class SessionSet {//½Ì±ÛÅæ
 	
 		private static SessionSet ss = new SessionSet();
 		private Set<Session> set;
@@ -18,7 +18,7 @@ public class SessionSet {//ì‹±ê¸€í†¤
 		}
 		
 		/**
-		 * ì‚¬ìš©ì ì°¾ê¸°
+		 * »ç¿ëÀÚ Ã£±â
 		 * */
 		public Session get(String sessionId) {
 			for(Session session : set) {
@@ -29,21 +29,21 @@ public class SessionSet {//ì‹±ê¸€í†¤
 			return null;
 		}
 		
-		//ì„¸ì…˜ ê°ì²´ë“¤ ë°˜í™˜
+		//¼¼¼Ç °´Ã¼µé ¹İÈ¯
 			public Set<Session> getSet(){
 				return set;
 			}
 			
 		
 		/**
-		 * ë¡œê·¸ì¸ ëœ ì‚¬ìš©ì ì¶”ê°€
+		 * ·Î±×ÀÎ µÈ »ç¿ëÀÚ Ãß°¡
 		 * */
 		public void add(Session session) {
 			set.add(session);
 		}
 			
 		/**
-		 * ì‚¬ìš©ì ì œê±° - ë¡œê·¸ì•„ì›ƒ
+		 * »ç¿ëÀÚ Á¦°Å - ·Î±×¾Æ¿ô
 		 * */
 		public void remove(Session session) {
 			set.remove(session);
